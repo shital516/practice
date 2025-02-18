@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to right,rgb(20, 127, 198) , rgb(125, 241, 245));
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 90px;
+        }
+
+        .loginbox {
+            background-image: linear-gradient(to right, rgb(31, 248, 230), rgb(81, 176, 240));
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(108, 215, 215, 0.3);
+            padding: 40px;
+            width: 330px;
+        }
+
+        input[type="text"] {
+            width: 100%; /* Ensure inputs have the same width as the button */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+            margin-bottom: 10px; /* Adds some space between the inputs */
+        }
+
+        button {
+            width: 100%; /* Make the button width equal to the input */
+            padding: 10px; /* Padding to match the input field */
+            background-color: #291081;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        .imgsection {
+            justify-content: space-between;
+        }
+</style>
+<body>
+    <div class="imgsection">
+        <img src="docpatient-removebg-preview.png" alt="" height="350px" width="450px">
+    </div>
+  <div class="login-container">
+    <input type="text" id="username" placeholder="username" required><br>
+    <input type="text" id="password" name="password" placeholder="password" required><br>
+    <button id="b1" onclick="login()">submit</button>
+  </div>
+<script>
+    function login(){
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        
+        if (username && password) {
+      
+            localStorage.setItem('username', username);
+           
+            window.location.href = 'welcome2.html';
+        } else{
+            alert('please enter both username and password')
+        }
+        if(username=='Doctor'){
+            window.location.href = 'dashboard.html';
+        }
+    }
+</script>
+</body>
+</html>
