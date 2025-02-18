@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class ="welcome-container" style="margin-top: 250px;">
+
+   </div>
+   <h2>welcome,<span style="color: aqua;background-color: blue;" id="usernameDisplay">!</span>
+
+   </h2>
+
+    <script>
+      
+        const username = localStorage.getItem('username');
+
+        if (username) {
+           
+            document.getElementById('usernameDisplay').textContent = username;
+        } else {
+            
+            alert("You are not logged in.");
+            window.location.href = 'login2.html';
+        }
+    </script> 
+</body>
+</html>
